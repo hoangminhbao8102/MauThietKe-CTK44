@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\MauThietKe-CTK44\\Lab\\src\\Lab4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A490D139-FCFB-4619-9953-00E251CEC368}|DoFactory.GangOfFour.Observer.RealWorld\\DoFactory.GangOfFour.Observer.RealWorld.csproj|e:\\mauthietke-ctk44\\lab\\src\\lab4\\dofactory.gangoffour.observer.realworld\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A490D139-FCFB-4619-9953-00E251CEC368}|DoFactory.GangOfFour.Observer.RealWorld\\DoFactory.GangOfFour.Observer.RealWorld.csproj|solutionrelative:dofactory.gangoffour.observer.realworld\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5B2E166-2072-47B5-A986-E842584C033C}|DoFactory.GangOfFour.Observer.Structural\\DoFactory.GangOfFour.Observer.Structural.csproj|e:\\mauthietke-ctk44\\lab\\src\\lab4\\dofactory.gangoffour.observer.structural\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5B2E166-2072-47B5-A986-E842584C033C}|DoFactory.GangOfFour.Observer.Structural\\DoFactory.GangOfFour.Observer.Structural.csproj|solutionrelative:dofactory.gangoffour.observer.structural\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\MauThietKe-CTK44\\Lab\\src\\Lab4\\DoFactory.GangOfFour.Observer.RealWorld\\Program.cs",
+              "RelativeDocumentMoniker": "DoFactory.GangOfFour.Observer.RealWorld\\Program.cs",
+              "ToolTip": "E:\\MauThietKe-CTK44\\Lab\\src\\Lab4\\DoFactory.GangOfFour.Observer.RealWorld\\Program.cs",
+              "RelativeToolTip": "DoFactory.GangOfFour.Observer.RealWorld\\Program.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAYwIQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T10:26:52.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\MauThietKe-CTK44\\Lab\\src\\Lab4\\DoFactory.GangOfFour.Observer.Structural\\Program.cs",
+              "RelativeDocumentMoniker": "DoFactory.GangOfFour.Observer.Structural\\Program.cs",
+              "ToolTip": "E:\\MauThietKe-CTK44\\Lab\\src\\Lab4\\DoFactory.GangOfFour.Observer.Structural\\Program.cs",
+              "RelativeToolTip": "DoFactory.GangOfFour.Observer.Structural\\Program.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAuwGMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T04:14:15.813Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

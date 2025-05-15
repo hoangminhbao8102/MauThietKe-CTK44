@@ -1,145 +1,147 @@
-﻿// Abstract Factory pattern -- Structural example
+﻿// Abstract Factory pattern -- Real World example
 
 using System;
 
-namespace DoFactory.GangOfFour.Abstract.Structural
+namespace DoFactory.GangOfFour.Abstract.RealWorld
 {
     /// <summary>
-    /// MainApp startup class for Structural
+    /// MainApp startup class for Real-World
     /// Abstract Factory Design Pattern.
     /// </summary>
     class MainApp
-	{
+    {
         /// <summary>
         /// Entry point into console application.
         /// </summary>
         public static void Main()
-		{
-            // Abstract factory #1
-            AbstractFactory factory1 = new ConcreteFactory1();
-			Client client1 = new Client(factory1);
-			client1.Run();
+        {
+            // Create and run the African animal world
+            ContinentFactory africa = new AfricaFactory();
+            AnimalWorld world = new AnimalWorld(africa);
+            world.RunFoodChain();
 
-            // Abstract factory #2
-            AbstractFactory factory2 = new ConcreteFactory2();
-			Client client2 = new Client(factory2);
-			client2.Run();
+            // Create and run the American animal world
+            ContinentFactory america = new AmericaFactory();
+            world = new AnimalWorld(america);
+            world.RunFoodChain();
 
             // Wait for user input
             Console.ReadKey();
-		}
-	}
+        }
+    }
 
     /// <summary>
     /// The 'AbstractFactory' abstract class
     /// </summary>
-    abstract class AbstractFactory
-	{
-		public abstract AbstractProductA CreateProductA();
-		public abstract AbstractProductB CreateProductB();
-	}
+    abstract class ContinentFactory
+    {
+        public abstract Herbivore CreateHerbivore();
+        public abstract Carnivore CreateCarnivore();
+    }
 
     /// <summary>
     /// The 'ConcreteFactory1' class
     /// </summary>
-    class ConcreteFactory1 : AbstractFactory
-	{
-		public override AbstractProductA CreateProductA()
-		{
-			return new ProductA1();
-		}
+    class AfricaFactory : ContinentFactory
+    {
+        public override Herbivore CreateHerbivore()
+        {
+            return new Wildebeest();
+        }
 
-		public override AbstractProductB CreateProductB()
-		{
-			return new ProductB1();
-		}
-	}
+        public override Carnivore CreateCarnivore()
+        {
+            return new Lion();
+        }
+    }
 
     /// <summary>
     /// The 'ConcreteFactory2' class
     /// </summary>
-    class ConcreteFactory2 : AbstractFactory
-	{
-		public override AbstractProductA CreateProductA()
-		{
-			return new ProductA2();
-		}
+    class AmericaFactory : ContinentFactory
+    {
+        public override Herbivore CreateHerbivore()
+        {
+            return new Bison();
+        }
 
-		public override AbstractProductB CreateProductB()
-		{
-			return new ProductB2();
-		}
-	}
+        public override Carnivore CreateCarnivore()
+        {
+            return new Wolf();
+        }
+    }
 
     /// <summary>
     /// The 'AbstractProductA' abstract class
     /// </summary>
-    abstract class AbstractProductA
-	{
-	}
+    abstract class Herbivore
+    {
+    }
 
     /// <summary>
     /// The 'AbstractProductB' abstract class
     /// </summary>
-    abstract class AbstractProductB
-	{
-		public abstract void Interact(AbstractProductA a);
-	}
+    abstract class Carnivore
+    {
+        public abstract void Eat(Herbivore a);
+    }
 
     /// <summary>
     /// The 'ProductA1' class
     /// </summary>
-    class ProductA1 : AbstractProductA
-	{
-	}
+    class Wildebeest : Herbivore
+    {
+    }
 
     /// <summary>
     /// The 'ProductB1' class
     /// </summary>
-    class ProductB1 : AbstractProductB
-	{
-		public override void Interact(AbstractProductA a)
-		{
-			Console.WriteLine(this.GetType().Name + " interacts with " + a.GetType().Name);
-		}
-	}
+    class Lion : Carnivore
+    {
+        public override void Eat(Herbivore h)
+        {
+            // Eat Wildebeest
+            Console.WriteLine(this.GetType().Name + " eats " + h.GetType().Name);
+        }
+    }
 
     /// <summary>
     /// The 'ProductA2' class
     /// </summary>
-    class ProductA2 : AbstractProductA
+    class Bison : Herbivore
     {
     }
 
     /// <summary>
     /// The 'ProductB2' class
     /// </summary>
-    class ProductB2 : AbstractProductB
+    class Wolf : Carnivore
     {
-        public override void Interact(AbstractProductA a)
+        public override void Eat(Herbivore h)
         {
-            Console.WriteLine(this.GetType().Name + " interacts with " + a.GetType().Name);
+            // Eat Bison
+            Console.WriteLine(this.GetType().Name + " eats " + h.GetType().Name);
         }
     }
 
     /// <summary>
-    /// The 'Client' class. Interaction environment for the products.
+    /// The 'Client' class
     /// </summary>
-    class Client
-	{
-		private AbstractProductA _abstractProductA;
-		private AbstractProductB _abstractProductB;
+    class AnimalWorld
+    {
+        private Herbivore _herbivore;
+        private Carnivore _carnivore;
 
         // Constructor
-        public Client(AbstractFactory factory)
-		{
-			_abstractProductA = factory.CreateProductA();
-			_abstractProductB = factory.CreateProductB();
-		}
+        public AnimalWorld(ContinentFactory factory)
+        {
+            _herbivore = factory.CreateHerbivore();
+            _carnivore = factory.CreateCarnivore();
+        }
 
-		public void Run()
-		{
-			_abstractProductB.Interact(_abstractProductA);
-		}
-	}
+        public void RunFoodChain()
+        {
+            _carnivore.Eat(_herbivore);
+        }
+    }
 }
